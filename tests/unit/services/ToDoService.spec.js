@@ -58,6 +58,6 @@ describe('ToDoService', () => {
     const item2 = deletedItem()
     LocalStorageService.setItem(STORAGE_KEY, [item, item2])
     ToDoService.removeItem(item.id)
-    expect(ToDoService.fetchAllWithDeleted()).toEqual("error")
+    expect(ToDoService.fetchAllWithDeleted()).toEqual([item2])
   })
 })
